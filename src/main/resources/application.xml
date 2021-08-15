@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
+      http://cxf.apache.org/jaxws
+      http://cxf.apache.org/schemas/jaxws.xsd
+      http://www.springframework.org/schema/context/spring-context.xsd
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+    <!--扫描spring bean-->
+    <context:component-scan base-package="xyz.xionglei"/>
+    <!--开启mvc注解驱动, 会自动配置上面的处理器映射器, 处理器适配器-->
+    <mvc:annotation-driven/>
+
+    <!--  导入cxf配置文件  -->
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+
+    <jaxws:endpoint id="helloService" implementor="xyz.xionglei.wsdl.service.impl.HelloServiceImpl" address="/cxfService"/>
+
+    <!--  注意：  -->
+    <!--把项目发布到tomcat上，然后访问http://localhost:8080/ownweb/cxf/cxfService?wsdl，看下能否成功访问。-->
+    <!-- http://localhost:8080/web-service/cxf/cxfService?wsdl -->
+    <!--ownweb是你的项目名，cxf是在web.xml中配置的<url-pattern>，cxfService是4.3中address的值，根据自己的需要可以修改下-->
+</beans>
