@@ -1,0 +1,27 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://impl.service.wsdl.xionglei.xyz/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:ns2="http://schemas.xmlsoap.org/soap/http"
+                  xmlns:ns1="http://service.wsdl.xionglei.xyz/"
+                  name="PortalUserImplService"
+                  targetNamespace="http://impl.service.wsdl.xionglei.xyz/">
+    <wsdl:import location="http://localhost:9999/wsdl_service?wsdl=PortalUser.wsdl" namespace="http://service.wsdl.xionglei.xyz/"> </wsdl:import>
+    <wsdl:binding name="PortalUserImplServiceSoapBinding" type="ns1:PortalUser">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="bussysVerification">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="bussysVerification">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="bussysVerificationResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PortalUserImplService">
+        <wsdl:port binding="tns:PortalUserImplServiceSoapBinding" name="PortalUserImplPort">
+            <soap:address location="http://localhost:9999/wsdl_service"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
