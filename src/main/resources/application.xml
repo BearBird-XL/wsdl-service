@@ -23,7 +23,7 @@
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
 
-    <jaxws:endpoint id="helloService" implementor="xyz.xionglei.wsdl.service.impl.HelloServiceImpl" address="/cxfService"/>
+    <jaxws:endpoint id="helloService" implementor="xyz.xionglei.wsdl.service.HelloServiceImpl" address="/cxfService"/>
 
     <!--  注意：  -->
     <!--把项目发布到tomcat上，然后访问http://localhost:8080/ownweb/cxf/cxfService?wsdl，看下能否成功访问。-->

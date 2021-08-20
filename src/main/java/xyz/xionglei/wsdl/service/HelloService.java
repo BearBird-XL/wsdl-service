@@ -10,5 +10,5 @@ public interface HelloService {
 
     @WebMethod
     @WebResult(name = "sayHelloRetValue")
-    public String sayHello(@WebParam(name = "username") String userName, @WebParam(name = "age") int age);
+    String sayHello(@WebParam(name = "username") String userName, @WebParam(name = "age") int age);
 }

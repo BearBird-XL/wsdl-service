@@ -1,4 +1,4 @@
-package xyz.xionglei.wsdl.service.impl;
+package xyz.xionglei.wsdl.service;
 
 import xyz.xionglei.wsdl.service.PortalUser;
 
