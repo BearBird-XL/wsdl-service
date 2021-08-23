@@ -2,6 +2,7 @@ package xyz.xionglei.wsdl.service;
 
 import xyz.xionglei.wsdl.service.PortalUser;
 
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 
 public class PortalUserImpl implements PortalUser {
@@ -12,6 +13,6 @@ public class PortalUserImpl implements PortalUser {
         System.out.println("PortalUserImpl.bussysVerification");
         System.out.println("UID = " + UID + ", SID = " + SID + ", Portalstep = " + Portalstep + ", AID = " + AID);
         System.out.println("---------------------------------------");
-        return AID;
+        return new String(AID.getBytes(StandardCharsets.UTF_8));
     }
 }
